@@ -1,2 +1,7 @@
+DB_NAME = 'local_db.db'
+
+
 class Config:
-    pass
+    # DB settings
+    SECRET_KEY = 'd6a7dd5539ce23fc722be0e5190a1526'
+    SQLALCHEMY_DATABASE_URI = f'sqlite:///{DB_NAME}'  # setting location to db

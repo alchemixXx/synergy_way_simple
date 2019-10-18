@@ -1,13 +1,19 @@
 from app import app
 from config import Config
 from users.routes import users
-from groups.routes import courses
+from groups.routes import groups
+from db import db
 
 
 def run_app():
     app.config.from_object(Config)
     app.register_blueprint(users)
-    app.register_blueprint(courses)
+    app.register_blueprint(groups)
+    db.init_app(app)
+    with app.app_context():
+        db.create_all()
+        db.session.commit()
+
     return app
 
 

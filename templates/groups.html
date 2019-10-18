@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="main_btns_users">
+      <!-- Add user button -->
+        <div class="header add_user">
+          <a href="{{ url_for('groups.add_new_group') }}"><img class="control_btn" src="{{ url_for('static', filename='images/plus-4-128.png' )}}" alt='add_user'></a>
+        </div>
+
+      <!-- Main header -->
+        <h1 class="header pagename">Groups</h1>
+
+    </div>
+
+    <div class="container_2">
+
+
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">DESCRIPTION</th>
+      <th scope="col">ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for group in groups_list.items %}
+    <tr>
+      <!-- <th scope="row">1</th> -->
+      <td>{{ group.id }}</td>
+      <td>{{ group.name }}</td>
+      <td>{{ group.description }}</td>
+      <td><div class="add_btn">
+        <a href="{{ url_for('groups.change_group', group_id=group.id) }}"><img src="{{ url_for('static', filename='images/edit.png' )}}" alt="edit"></a>
+        <a href="{{ url_for('groups.delete_group', group_id=group.id) }}"><img src="{{ url_for('static', filename='images/delete.png' )}}" alt="delete"></a>
+
+      </div></td>
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+    </div>
+
+          <div class="centred">
+            {% for page_num in groups_list.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+              {% if page_num %}
+                {% if groups_list.page == page_num %}
+                  <a class="btn btn-info mb-4" href="{{ url_for('groups.all_groups', page=page_num) }}">{{ page_num }}</a>
+                {% else %}
+                  <a class="btn btn-outline-info mb-4" href="{{ url_for('groups.all_groups', page=page_num) }}">{{ page_num }}</a>
+                {% endif %}
+              {% else %}
+                ...
+              {% endif %}
+            {% endfor %}
+          </div>
+
+         </div>
+       </div>
+     </div>
+
+{% endblock content %}
