@@ -1,7 +1,8 @@
 from flask import Blueprint, flash, redirect, render_template, url_for, request
-from models import Group, User
+
 from db import db
 from groups.forms import NewGroupForm, UpdateGroupForm
+from models import Group, User
 
 groups = Blueprint('groups', __name__)
 title = "Groups page"

@@ -1,8 +1,8 @@
 from app import app
 from config import Config
-from users.routes import users
-from groups.routes import groups
 from db import db
+from groups.routes import groups
+from users.routes import users
 
 
 def run_app():

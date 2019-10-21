@@ -1,12 +1,9 @@
 from flask import Blueprint, request
 from flask import render_template, flash, redirect, url_for
-# from flask_paginate import Pagination, get_page_args
+
 from db import db
-
-from models import User
-
 from forms import NewUserForm, UpdateUserForm
-
+from models import User
 
 users = Blueprint('users', __name__)
 
