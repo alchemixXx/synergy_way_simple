@@ -1,12 +1,12 @@
 import React from 'react';
-class Grous extends React.Component {
+class Groups extends React.Component {
     render() {
          return (
             <div>
-                test
+                <p>Groups12</p>
             </div>
         );
     }
 
 }
-export default Grous;
+export default Groups;

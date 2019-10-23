@@ -1,13 +1,15 @@
 import React from 'react';
+//import Users from "./components/List_of_Users";
+import Groups from "./components/List_of_Groups";
 import Users from "./components/List_of_Users";
-import Grous from "./components/List_of_Groups";
 
 class App extends React.Component {
     render() {
         return (
             <div>
-               <Users/>
-               <Grous/>
+frfrefvrefe
+                <Users />
+                <Groups />
 
             </div>
         );
