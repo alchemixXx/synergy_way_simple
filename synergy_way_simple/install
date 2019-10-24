@@ -1,0 +1,17 @@
+sudo apt update
+sudo apt install nodejs
+sudo apt install npm
+
+//проверка версий
+nodejs -v
+npm -v
+
+npm install -g create-react-app
+
+create-react-app new-app
+cd new-app
+npm start
+
+npm install bootstrap
+
+npm install jquery popper.js
