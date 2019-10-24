@@ -13,5 +13,5 @@ cd new-app
 npm start
 
 npm install bootstrap
-
+npm install react-bootstrap
 npm install jquery popper.js

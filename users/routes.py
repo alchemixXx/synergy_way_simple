@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from flask import render_template, flash, redirect, url_for
 
 from db import db
-from forms import NewUserForm, UpdateUserForm
+from .forms import NewUserForm, UpdateUserForm
 from models import User
 
 users = Blueprint('users', __name__)
